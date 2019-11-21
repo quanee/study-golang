@@ -1,1 +1,4 @@
 .idea/*
+*.in
+*.out
+*.exe
