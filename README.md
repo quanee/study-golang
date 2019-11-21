@@ -1,2 +1,2 @@
-# study-golang
-study golang
+# study golang
+golang study notebook
