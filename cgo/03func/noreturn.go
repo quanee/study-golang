@@ -6,6 +6,6 @@ import "fmt"
 
 func main() {
 	v, _ := C.noreturn()
-	fmt.Printf("%#v", v)
-	fmt.Printf("%v", v)
+	fmt.Printf("%#v\n", v)
+	fmt.Printf("%v\n", v)
 }
