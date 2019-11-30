@@ -1,4 +1,4 @@
-package main
+package _2ctype
 
 /*
 static char arr[10];
