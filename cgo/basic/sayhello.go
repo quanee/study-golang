@@ -10,5 +10,5 @@ static void SayHello(const char* s) {
 import "C"
 
 func main() {
-	C.SayHello(C.String("Hello World\n"))
+	C.SayHello(C.CString("Hello World\n"))
 }
