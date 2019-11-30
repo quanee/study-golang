@@ -1,6 +1,6 @@
 package main
 
-//#cgo CFLAGS: -I./
+//#cgo CPPFLAGS: -I./
 //void SayHello(const char* s);
 import "C"
 
