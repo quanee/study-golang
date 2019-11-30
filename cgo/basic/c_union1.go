@@ -9,7 +9,10 @@ union B {
 };
 */
 import "C"
-import "fmt"
+import (
+	"fmt"
+	"unsafe"
+)
 
 func main() {
 	var b C.union_B;
