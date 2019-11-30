@@ -6,6 +6,7 @@ static char *s = "Hello";
 */
 import "C"
 import (
+	"fmt"
 	"reflect"
 	"unsafe"
 )
@@ -19,7 +20,7 @@ func main() {
 	arr0Hdr.Cap = 10
 
 	// 通过切片语法转换
-	_ = (*[31]byte)(unsafe.Pointer(&C.arr[0]))[:10:10]
+	arr1 := (*[31]byte)(unsafe.Pointer(&C.arr[0]))[:10:10]
 
 	var s0 string
 	var s0Hdr = (*reflect.StringHeader)(unsafe.Pointer(&s0))
@@ -27,5 +28,7 @@ func main() {
 	s0Hdr.Len = int(C.strlen(C.s))
 
 	sLen := int(C.strlen(C.s))
-	_ = string((*[31]byte)(unsafe.Pointer(&C.s[0]))[:sLen:sLen])
+	s1 := string((*[31]byte)(unsafe.Pointer(&C.s[0]))[:sLen:sLen])
+	fmt.Println(arr1)
+	fmt.Println(s1)
 }
