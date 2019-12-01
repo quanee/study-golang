@@ -21,7 +21,7 @@ func _cgo_qsort_compare(a, b unsafe.Pointer) C.int {
 	return C.int(go_qsort_compare_info.fn(a, b))
 }
 
-func Sort(base unsafe.Pointer, num, size int, cmp func(a, b unsafe.Pointer) int) {
+func sort(base unsafe.Pointer, num, size int, cmp func(a, b unsafe.Pointer) int) {
 	go_qsort_compare_info.Lock()
 	defer go_qsort_compare_info.Unlock()
 
@@ -29,5 +29,14 @@ func Sort(base unsafe.Pointer, num, size int, cmp func(a, b unsafe.Pointer) int)
 
 	C.qsort(base, C.size_t(num), C.size_t(size),
 		C.qsort_cmp_func_t(C._cgo_qsort_compare),
+	)
+}
+
+func Sort(values []int32) {
+	sort(unsafe.Pointer(&values[0]), len(values), int(unsafe.Sizeof(values[0])),
+		func(a, b unsafe.Pointer) int {
+			pa, pb := (*int32)(a), (*int32)(b)
+			return int(*pa - *pb)
+		},
 	)
 }
