@@ -1,6 +1,5 @@
 package main
 
-
 /*
 extern char* NewGoString(char* );
 extern void FreeGoString(char* );
