@@ -25,7 +25,3 @@ func cgo_MyBuffer_Data(p *cgo_MyBuffer_T) *C.char {
 func cgo_MyBuffer_Size(p *cgo_MyBuffer_T) C.int {
 	return C.MyBuffer_Size((*C.MyBuffer_T)(p))
 }
-
-func main() {
-	
-}
