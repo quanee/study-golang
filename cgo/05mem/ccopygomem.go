@@ -2,6 +2,8 @@ package main
 
 /*
 #include <stdlib.h>
+#include <stdio.h>
+
 void printString(const char* s) {
 	printf("%s", s);
 }
