@@ -1,9 +1,9 @@
-package main
+package _4qsort
 
 import (
 	"fmt"
 
-	qsort "study-golang/cgo/04qsort"
+	qsort "study-golang/cgo/04qsort/qsortV1"
 )
 
 func main() {
