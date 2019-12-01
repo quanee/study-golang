@@ -1,6 +1,6 @@
 package main
 
-//#include "./person_capi.h"
+//#include "person_capi.h"
 import "C"
 import "unsafe"
 
