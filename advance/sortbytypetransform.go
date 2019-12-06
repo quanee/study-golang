@@ -1,4 +1,4 @@
-package advance
+package main
 
 import (
 	"reflect"
