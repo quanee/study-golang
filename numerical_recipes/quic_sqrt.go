@@ -15,7 +15,6 @@ func QRSqrtF64(number float64) float64 {
 	i = 0x5fe6ec85e7de30da - (i >> 1)
 	y = *(*float64)(unsafe.Pointer(&i))
 	y = y * (threehalfs - (twohalfs * y * y))
-	//y = y * (threehalfs - (x2 * y * y))
 
 	return y
 }
@@ -41,8 +40,7 @@ func Sqrt(number float64) float64 {
 	if number == 0 {
 		return 0
 	}
-	var last float64 = 0.0
-	var res float64 = 1.0
+	last, res := 0.0, 1.0
 	for res != last {
 		last = res
 		res = (res + number/res) / 2
