@@ -8,6 +8,10 @@ import (
 	"sort"
 	"time"
 )
+
+type Interface interface {
+}
+
 var startTime time.Time
 
 func Init() {
